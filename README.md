@@ -1,10 +1,10 @@
-# 模板引擎 [![Build Status](https://travis-ci.org/yuhonyon/f2e-htmlTemp.svg?branch=master)](https://travis-ci.org/yuhonyon/f2e-htmlTemp) [![npm](https://img.shields.io/npm/v/@fastweb/html-temp.svg)](https://www.npmjs.com/package/@fastweb/html-temp)
+# 模板引擎 [![Build Status](https://travis-ci.org/yuhonyon/f2e-bestT.svg?branch=master)](https://travis-ci.org/yuhonyon/f2e-bestT) [![npm](https://img.shields.io/npm/v/@fastweb/html-temp.svg)](https://www.npmjs.com/package/@fastweb/html-temp)
 ------
->htmlTemp.js特点是快，小，无依赖其他插件。支持过滤器
+>根据doT.js修改,特点是快，小，无依赖其他插件。新增支持过滤器,ejs语法,缓存
 
 ## 安装
 ```bash
-yarn add @fastweb/http-temp
+yarn add best-template
 ```
 
 ## 用法
@@ -22,18 +22,18 @@ yarn add @fastweb/http-temp
 </html>
 ```
 ```js
-import htmlTemp from "@fastweb/http-temp";
+import bestT from "@fastweb/http-temp";
 let mydata={
   title:'题目',
   list:[1,2,3,4,5]
 }
-htmlTemp.renderDom('app','app-temp',mydata)
+bestT.renderDom('app','app-temp',mydata)
 ```
 
 ## 方法
 
 ### renderDom  渲染模板插入dom
-`htmlTemp.renderDom(dom,tmpl,data,def,id)`
+`bestT.renderDom(dom,tmpl,data,def,id)`
 参数:
 * dom(string|dom)-被插入渲染结果的dom
 * tmpl(string)-模板
@@ -42,24 +42,24 @@ htmlTemp.renderDom('app','app-temp',mydata)
 * id(number|string)(可选)-唯一id(提高渲染速度)
 
 ### render 渲染模板返回html
-`htmlTemp.renderDom(tmpl,data,def,id)`
+`bestT.renderDom(tmpl,data,def,id)`
 参数同renderDom
 
 ### compile 返回模板函数
-htmlTemp.compile(tmpl,def,id)
+bestT.compile(tmpl,def,id)
 参数同renderDom
 
 ```
-htmlTemp.renderDom(dom,tmpl,data)
+bestT.renderDom(dom,tmpl,data)
 //等同
-dom.innerHTML=htmlTemp.render(tmpl,data)
+dom.innerHTML=bestT.render(tmpl,data)
 //等同
-dom.innerHTML=htmlTemp.compile(tmpl)(data)
+dom.innerHTML=bestT.compile(tmpl)(data)
 ```
 
 ## 过滤器 |
 ```js
-  htmlTemp.filters={
+  bestT.filters={
     sex:function(str){
       if(str==0){
         return "男人"
@@ -89,7 +89,7 @@ dom.innerHTML=htmlTemp.compile(tmpl)(data)
     age:'40',
     sex:0
   }
-  htmlTemp.render(tmpl,data);
+  bestT.render(tmpl,data);
   //<div>老王是一个成年帅气的男人</div>
 
 ```

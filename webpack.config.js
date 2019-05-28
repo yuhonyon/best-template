@@ -6,9 +6,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 
 const packageJson = require('./package.json');
-const projectName = packageJson.name.replace('@fastweb/', '').replace(/(-[a-z])/g,function($,$1){
-  return $1.replace("-",'').toUpperCase();
-});
+const projectName = "bestT"
 const projectPath=packageJson.main;
 const env = process.env.WEBPACK_ENV;
 const plugins=[];

@@ -1,6 +1,6 @@
 {
-  "name": "light-template",
-  "version": "1.0.0",
+  "name": "best-template",
+  "version": "1.2.0",
   "description": "模板引擎",
   "main": "src/index.js",
   "scripts": {
